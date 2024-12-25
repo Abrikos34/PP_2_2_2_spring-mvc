@@ -13,7 +13,7 @@ import org.thymeleaf.spring5.view.ThymeleafViewResolver;
 
 @Configuration
 @EnableWebMvc
-@ComponentScan("web")
+@ComponentScan(basePackages = "web")
 public class WebConfig implements WebMvcConfigurer {
 
     private final ApplicationContext applicationContext;
@@ -26,9 +26,9 @@ public class WebConfig implements WebMvcConfigurer {
     public SpringResourceTemplateResolver templateResolver() {
         SpringResourceTemplateResolver templateResolver = new SpringResourceTemplateResolver();
         templateResolver.setApplicationContext(applicationContext);
-        templateResolver.setPrefix("/WEB-INF/pages/");
-        templateResolver.setSuffix(".html");
-        templateResolver.setCacheable(false); // Отключение кэширования
+        templateResolver.setPrefix("/WEB-INF/pages/"); // Путь к представлениям
+        templateResolver.setSuffix(".html"); // Расширение файлов
+        templateResolver.setCacheable(false); // Отключаем кэширование
         return templateResolver;
     }
 
@@ -45,7 +45,8 @@ public class WebConfig implements WebMvcConfigurer {
         ThymeleafViewResolver resolver = new ThymeleafViewResolver();
         resolver.setTemplateEngine(templateEngine());
         resolver.setCharacterEncoding("UTF-8");
-        resolver.setContentType("text/html; charset=UTF-8"); // Добавлен Content-Type
+        resolver.setContentType("text/html; charset=UTF-8");
         registry.viewResolver(resolver);
     }
 }
+
