@@ -1,4 +1,4 @@
-# IntelliJ IDEA specific
+# IntelliJ IDEA specific files and folders
 .idea/
 .idea/**/*
 !.idea/fileTemplates
@@ -41,7 +41,7 @@ release.properties
 
 # Dependency caches
 /.gradle/
-/.gradle/
+.gradle/
 /node_modules/
 
 # IDE specific
@@ -49,5 +49,20 @@ release.properties
 *.ipr
 *.iws
 
+# Build and target directories
 # Исключаем временные файлы, но сохраняем target
 !/target/
+
+# Exclude generated documentation
+/doc/
+
+# Exclude coverage reports
+/coverage/
+**/jacoco.exec
+**/test-results/
+
+# IntelliJ-specific build output
+/out/
+
+# Exclude compiled assets
+/dist/

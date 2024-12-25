@@ -17,6 +17,6 @@ public class HelloController {
 		messages.add("I'm a Spring MVC application");
 		messages.add("Version: 5.2.0, released in September '19");
 		model.addAttribute("messages", messages);
-		return "index"; // Отображаем index.html
+		return "index"; // метод возвращает index
 	}
 }
