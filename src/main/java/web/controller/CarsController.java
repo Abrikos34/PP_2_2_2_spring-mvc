@@ -9,7 +9,7 @@ import web.service.CarService;
 
 @Controller
 public class CarsController {
-    CarService carService;
+    private CarService carService;
 
     public CarsController(CarService carService) {
         this.carService = carService;
